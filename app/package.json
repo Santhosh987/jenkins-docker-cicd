@@ -1,0 +1,13 @@
+{
+  "name": "jenkins-docker-cicd",
+  "version": "1.0.0",
+  "description": "Jenkins CI/CD project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
