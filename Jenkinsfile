@@ -9,12 +9,13 @@ pipeline {
             }
         }
 
-        stage('test') {
+        stage('Test') {
             steps {
                 sh '''
                     docker run --rm \
                     -v "$WORKSPACE/app:/app" \
                     -w /app \
+                    --entrypoint sh \
                     node:22-alpine \
                     -c "npm install && npm test"
                     ''' 
