@@ -39,5 +39,13 @@ pipeline {
                     '''
             }
         }
+
+        stage("Image Tagging") {
+            steps {
+                sh '''
+                    docker tag jenkins-docker-cicd:${BUILD_NUMBER} \
+                    937792903959.dkr.ecr.ap-south-1.amazonaws.com/jenkins-docker-cicd:${BUILD_NUMBER}
+                    '''
+        }
     }
 }
