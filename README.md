@@ -59,7 +59,7 @@ jenkins-docker-cicd:12
 
 This makes it easier to identify which Jenkins build produced a particular Docker image.
 
-AWS Configuration
+# AWS Configuration
 Region: ap-south-1
 ECR Repository: jenkins-docker-cicd
 EKS Cluster: jenkins-cluster
@@ -67,7 +67,7 @@ Node Group: jenkins-nodes
 The EKS cluster uses managed worker nodes.
 Jenkins accesses AWS services through an EC2 IAM role rather than storing AWS access keys inside the Jenkins configuration.
 
-Kubernetes
+# Kubernetes
 The application is deployed using a Kubernetes Deployment with 2 replicas.
 A Kubernetes LoadBalancer Service is used to expose the application.
 The application runs on container port 3000.
