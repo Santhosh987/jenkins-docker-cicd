@@ -56,5 +56,20 @@ pipeline {
                     '''
             }
         }
+
+        stage("Deploy to EKS") {
+            steps {
+                sh '''
+                    aws eks update kubeconfig --region ap-south-1 --name jenkins-cluster
+                    kubectl apply -f k8s/deployment.yaml
+                    kubectl apply -f k8s/service.yaml
+
+                    kubectl set image deployment/jenkins-cicd-app \
+                    jenkins-cicd-app=937792903959.dkr.ecr.ap-south-1.amazonaws.com/jenkins-docker-cicd:${BUILD_NUMBER}
+
+                    kubectl rollout status deployment/jenkins-cicd-app
+                    '''
+            }
+        }
     }
 }
