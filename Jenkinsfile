@@ -48,5 +48,13 @@ pipeline {
                     '''
             }
         }
+
+        stage("Image Push") {
+            steps {
+                sh '''
+                    docker push 937792903959.dkr.ecr.ap-south-1.amazonaws.com/jenkins-docker-cicd:${BUILD_NUMBER}
+                    '''
+            }
+        }
     }
 }
