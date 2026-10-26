@@ -1,4 +1,4 @@
-# Jenkins CI/CD Pipeline with Docker, GitHub, Amazon ECR & Amazon EKS
+# 🚀 Jenkins CI/CD Pipeline with Docker, GitHub, Amazon ECR & Amazon EKS
 
 A hands-on DevOps project where I built an end-to-end CI/CD pipeline using Jenkins, Docker, GutHub, Amazon ECR, and Amazon EKS.
 
